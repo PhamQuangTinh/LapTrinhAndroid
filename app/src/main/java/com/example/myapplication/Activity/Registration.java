@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -39,7 +40,8 @@ public class Registration extends AppCompatActivity {
     private Button btnDK,btnHuy;
     private EditText user, pass, fullname, SDT,email;
     private AlertDialog.Builder builder;
-    String url = "http://10.17.37.112:8080/androidwebservice/Registration.php";
+    final LoadingDialog dialogS = new LoadingDialog(Registration.this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +71,8 @@ public class Registration extends AppCompatActivity {
                                 setPositiveButton("Có", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        DangKy(url);
+                                        dialogS.startLoadingDialog();
+                                        DangKy(SystemConstant.KEY_URL_Registration);
                                     }
                                 })
                                 .setNegativeButton("Không", new DialogInterface.OnClickListener() {
@@ -126,6 +129,14 @@ public class Registration extends AppCompatActivity {
                             }
                         } catch (JSONException error) {
                             error.getMessage();
+                        } finally {
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dialogS.dismissDialog();
+                                }
+                            },2000);
                         }
 //                        if(response.trim().equals("Registration Successfully")) {
 //                            Toast.makeText(Registration.this, "Registration Successfully", Toast.LENGTH_LONG).show();
@@ -144,6 +155,7 @@ public class Registration extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(Registration.this,"loi ket noi", Toast.LENGTH_LONG).show();
+                dialogS.dismissDialog();
             }
         }
         ){

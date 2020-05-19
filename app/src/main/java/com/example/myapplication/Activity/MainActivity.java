@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText userName,passWord;
     private boolean isEnter;
     final LoadingDialog dialog = new LoadingDialog(MainActivity.this);
-    String url = "http://10.17.47.201:8080/androidwebservice/login.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     dialog.startLoadingDialog();
-                    DangNhap(url);
+                    DangNhap(SystemConstant.KEY_URL_Login);
                 }
 
             }
