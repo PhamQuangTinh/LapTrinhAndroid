@@ -27,16 +27,7 @@
         $response['message'] = "connect failed";
     }
     echo json_encode($response);
-    // mysqli_close($con);
 
-
-
-    // $sql = "INSERT INTO dangnhap values (null,'$user','$password')";
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "New record created successfully";
-    //   } else {
-    //     echo "Error: " . $sql . "<br>" . $conn->error;
-    //   }
       
       
     
