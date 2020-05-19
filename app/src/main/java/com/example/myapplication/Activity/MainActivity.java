@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -35,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
     private Button btnDN,btnDK;
     private EditText userName,passWord;
     private boolean isEnter;
-    String url = "http://10.17.37.112:8080/androidwebservice/login.php";
+    final LoadingDialog dialog = new LoadingDialog(MainActivity.this);
+    String url = "http://10.17.47.201:8080/androidwebservice/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         init();
-
 
         btnDN.setOnClickListener(new View.OnClickListener() {
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Bạn chưa nhập tài khoản hoặc mật khẩu",Toast.LENGTH_LONG).show();
                 }
                 else{
+                    dialog.startLoadingDialog();
                     DangNhap(url);
                 }
 
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                                 account.setSDT(jsonObject.getString("SDT"));
 
                                 message = jsonObject.getString("message");
+
                                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
                                 //Start LoginActivity
                                 startActivity(new Intent(MainActivity.this,AfterloginActivity.class));
@@ -99,6 +102,14 @@ public class MainActivity extends AppCompatActivity {
                             }
                         } catch (JSONException error) {
                             error.getMessage();
+                        }finally {
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dialog.dismissDialog();
+                                }
+                            },2000);
                         }
 //                        if(response.trim().equals("Data Matched")) {
 //                            Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_LONG).show();
@@ -112,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(MainActivity.this,"loi ket noi", Toast.LENGTH_LONG).show();
+                        dialog.dismissDialog();
                     }
                 }
         ){
