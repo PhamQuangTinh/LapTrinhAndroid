@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     dialog.startLoadingDialog();
                     DangNhap(SystemConstant.KEY_URL_Login);
+
                 }
 
             }
