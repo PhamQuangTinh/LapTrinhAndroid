@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Registration"></activity>
+        <activity android:name=".Activity.Registration" />
+        <activity android:name=".Activity.ProfileActivity" />
         <activity android:name=".Activity.AfterloginActivity" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>

@@ -181,6 +181,17 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnOKpf"
+            android:layout_marginTop="40dp"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="170dp"
+            android:text="Xác Nhận"
+            android:textColor="@color/graylight"
+            android:background="@drawable/border_xacnhan_pf_button"
+            />
+
     </LinearLayout>
 
 
