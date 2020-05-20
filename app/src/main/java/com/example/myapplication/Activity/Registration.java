@@ -62,7 +62,21 @@ public class Registration extends AppCompatActivity {
                 }
                 else {
                     if(!CheckMail(email.getText().toString())){
+                        dialogS.startLoadingDialog();
+                        resetText();
                         Toast.makeText(Registration.this,"Mail không hợp lệ",Toast.LENGTH_LONG).show();
+
+                    }
+                    else if(user.getText().length() <=6){
+                        dialogS.startLoadingDialog();
+                        resetText();
+                        Toast.makeText(Registration.this,"Username phải có tối thiểu 6 ký tự",Toast.LENGTH_LONG).show();
+
+                    }
+                    else if(pass.getText().length() <=6){
+                        dialogS.startLoadingDialog();
+                        resetText();
+                        Toast.makeText(Registration.this,"Password phải có tối thiểu 6 ký tự",Toast.LENGTH_LONG).show();
 
                     }
                     else{
@@ -131,13 +145,7 @@ public class Registration extends AppCompatActivity {
                         } catch (JSONException error) {
                             error.getMessage();
                         } finally {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    dialogS.dismissDialog();
-                                }
-                            },2000);
+                            waitForLoading();
                         }
 //                        if(response.trim().equals("Registration Successfully")) {
 //                            Toast.makeText(Registration.this, "Registration Successfully", Toast.LENGTH_LONG).show();
@@ -192,11 +200,22 @@ public class Registration extends AppCompatActivity {
         fullname.setText("");
         SDT.setText("");
         email.setText("");
+        waitForLoading();
     }
 
     private boolean CheckMail(String target) {
         if (target.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+"))
             return true;
         return false;
+    }
+
+    private void waitForLoading(){
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialogS.dismissDialog();
+            }
+        },2000);
     }
 }
