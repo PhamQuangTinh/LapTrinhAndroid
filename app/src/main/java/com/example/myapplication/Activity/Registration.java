@@ -119,6 +119,7 @@ public class Registration extends AppCompatActivity {
                                 account.setSDT(jsonObject.getString("SDT"));
 
                                 message = jsonObject.getString("message");
+                                resetText();
                                 Toast.makeText(Registration.this, message, Toast.LENGTH_LONG).show();
                                 //Start LoginActivity
                                 Intent intent = new Intent(Registration.this, MainActivity.class);

@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                                 account.setSDT(jsonObject.getString("SDT"));
 
                                 message = jsonObject.getString("message");
+                                resetText();
 
                                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
                                 //Start LoginActivity
@@ -137,6 +138,11 @@ public class MainActivity extends AppCompatActivity {
         };
         requestQueue.add(stringRequest);
 
+    }
+
+    private void resetText(){
+        userName.setText("");
+        passWord.setText("");
     }
 
 
