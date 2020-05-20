@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graylight"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="259dp"
+            android:orientation="vertical"
+            android:background="@drawable/gradientbackground"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                />
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jake Pham"
+                android:textColor="#fff"
+                android:textSize="21dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/fullnameicon"/>
+            <TextView
+                android:id="@+id/txtpfHovaTen"
+                android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="Pham Quang Tinh"
+                android:layout_gravity="center_vertical"
+                android:textSize="21sp"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/blueplusicon"
+                android:layout_marginLeft="93dp"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bluegmail"/>
+            <TextView
+                android:id="@+id/txtpfEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="tinhphamqtkd@gmail.com"
+                android:layout_gravity="center_vertical"
+                android:textSize="21sp"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/blueplusicon"
+                android:layout_marginLeft="11dp"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bluephonepng"/>
+            <TextView
+                android:id="@+id/txtpfSDT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="0978890722"
+                android:layout_gravity="center_vertical"
+                android:textSize="21sp"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/blueplusicon"
+                android:layout_marginLeft="144dp"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/blueusericon"/>
+            <TextView
+                android:id="@+id/txtpfUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="quangTinh"
+                android:layout_gravity="center_vertical"
+                android:textSize="21sp"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/blueplusicon"
+                android:layout_marginLeft="161dp"
+                android:layout_gravity="center_vertical"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bluepass"/>
+            <TextView
+                android:id="@+id/txtpfPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="**********"
+                android:layout_gravity="center_vertical"
+                android:textSize="21sp"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/blueplusicon"
+                android:layout_marginLeft="170dp"
+                android:layout_gravity="center_vertical"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
