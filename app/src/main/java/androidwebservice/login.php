@@ -16,6 +16,7 @@
             $response["email"] = $check['email'];
             $response['SDT'] = $check['sodienthoai'];
             $response['fullname'] = $check['hovaten'];
+            $response['password'] = $check['Password'];
         }
         else{
             $response['success'] = 0;

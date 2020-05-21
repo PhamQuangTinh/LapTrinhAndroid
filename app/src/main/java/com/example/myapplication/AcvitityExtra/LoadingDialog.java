@@ -1,4 +1,4 @@
-package com.example.myapplication.Activity;
+package com.example.myapplication.AcvitityExtra;
 
 import android.app.Activity;
 import android.app.AlertDialog;
