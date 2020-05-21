@@ -24,5 +24,7 @@ public class AfterloginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
 }
