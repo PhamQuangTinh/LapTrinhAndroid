@@ -53,8 +53,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Bạn chưa nhập tài khoản hoặc mật khẩu",Toast.LENGTH_LONG).show();
                 }
                 else{
-                    dialog.startLoadingDialog();
-                    DangNhap(SystemConstant.KEY_URL_Login);
+                    Intent intent = new Intent(MainActivity.this, AfterloginActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
+//                    dialog.startLoadingDialog();
+//                    DangNhap(SystemConstant.KEY_URL_Login);
 
                 }
 
@@ -98,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
                                 //Start LoginActivity
                                 startActivity(new Intent(MainActivity.this,AfterloginActivity.class));
+
                             } else {
                                 message = jsonObject.getString("message");
                                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
@@ -145,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
         userName.setText("");
         passWord.setText("");
     }
-
 
 
 }
