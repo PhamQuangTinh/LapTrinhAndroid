@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.ActivityFour"></activity>
+        <activity android:name=".Activity.ActivityThree" />
+        <activity android:name=".Activity.ActivityTwo" />
+        <activity android:name=".Activity.ActivityOne" />
         <activity android:name=".Activity.Registration" />
         <activity android:name=".Activity.ProfileActivity" />
         <activity android:name=".Activity.AfterloginActivity" />

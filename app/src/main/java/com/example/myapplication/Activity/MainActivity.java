@@ -52,15 +52,15 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Bạn chưa nhập tài khoản hoặc mật khẩu",Toast.LENGTH_LONG).show();
                 }
                 else{
-//                    Intent intent = new Intent(MainActivity.this, AfterloginActivity.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(MainActivity.this, AfterloginActivity.class);
+                    startActivity(intent);
 
-                    //Bat dau mo dialog loading
-                    dialog.startLoadingDialog();
-                    //Chuc Nang dang nhap
-                    DangNhap(SystemConstant.KEY_URL_Login);
-                    //Anomation chuyen trang
-                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
+//                    //Bat dau mo dialog loading
+//                    dialog.startLoadingDialog();
+//                    //Chuc Nang dang nhap
+//                    DangNhap(SystemConstant.KEY_URL_Login);
+//                    //Anomation chuyen trang
+//                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
                 }
 
             }
